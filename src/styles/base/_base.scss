@@ -1,0 +1,29 @@
+@import 'bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Dosis:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+html,
+#root {
+    font-family: 'Open Sans', sans-serif;
+
+    color: $dark-gray;
+    background-color: lighten($light-gray, 10%);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Raleway', sans-serif;
+    color: $dark;
+}
+
+h1 {
+    font-size: 3rem;
+}
