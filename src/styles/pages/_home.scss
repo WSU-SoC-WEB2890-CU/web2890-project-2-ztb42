@@ -8,6 +8,15 @@
         z-index: 1000;
     }
 
+    .mobile-nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        box-shadow: none;
+        background-color: transparent;
+        z-index: 1000;
+    }
+
     .image {
         height: 100vh;
         width: 100%;
