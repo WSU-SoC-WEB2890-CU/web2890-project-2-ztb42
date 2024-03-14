@@ -30,6 +30,18 @@
             font-weight: 100;
             margin: 0 2rem;
         }
+
+        @media (max-width: 768px) {
+            gap: 1rem;
+
+            .slash {
+                display: none;
+            }
+
+            a {
+                margin: 1rem 0;
+            }
+        }
     }
 
     .links {
