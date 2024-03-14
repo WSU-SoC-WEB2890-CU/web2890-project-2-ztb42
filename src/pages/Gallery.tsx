@@ -51,6 +51,38 @@ const itemData = [
         img: '/gallery/img-3.jpg',
         title: 'Teenager posing with gun',
     },
+    {
+        img: '/gallery/img-4.jpg',
+        title: 'Girl leaning against tree in forest',
+    },
+    {
+        img: '/gallery/img-5.jpg',
+        title: 'Girl in forest with leaf against face',
+    },
+    {
+        img: '/gallery/img-6.jpg',
+        title: 'Two girls in forest hiding faces with leaves',
+    },
+    {
+        img: '/gallery/img-7.jpg',
+        title: 'Girl posing in forest',
+    },
+    {
+        img: '/gallery/img-8.jpg',
+        title: 'Girl sitting in forest posing',
+    },
+    {
+        img: '/gallery/img-9.jpeg',
+        title: 'Soccer ball on salt flats in front of sunset',
+    },
+    {
+        img: '/gallery/img-10.jpeg',
+        title: 'Girl giving guy a piggyback ride on salt flats',
+    },
+    {
+        img: '/gallery/img-11.jpeg',
+        title: 'Guy proposing to girl in mountains',
+    },
 ];
 
 export default Gallery;
