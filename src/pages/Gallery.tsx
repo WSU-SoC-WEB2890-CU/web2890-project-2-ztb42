@@ -2,9 +2,11 @@ import { Masonry } from '@mui/lab';
 import { Container } from '@mui/material';
 
 const Gallery = () => {
+    const isMobile = window.innerWidth < 768;
+
     return (
         <Container className="gallery" sx={{ my: 5 }}>
-            <Masonry columns={2} spacing={2}>
+            <Masonry columns={isMobile ? 1 : 2} spacing={2}>
                 {itemData.map((item, index) => (
                     <div key={index}>
                         <img
