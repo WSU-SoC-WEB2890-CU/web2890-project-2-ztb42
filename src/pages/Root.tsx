@@ -1,12 +1,22 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
-const Root: React.FC = () => {
+const Root = () => {
+    const location = useLocation();
+    const isHomePage = location.pathname === '/';
+
     return (
         <>
-            <Navbar />
+            {isHomePage ? (
+                <div className="home">
+                    <Navbar />
+                </div>
+            ) : (
+                <Navbar />
+            )}
             <Outlet />
+            {!isHomePage && <Footer />}
         </>
     );
 };

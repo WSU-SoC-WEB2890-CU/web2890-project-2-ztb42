@@ -1,0 +1,16 @@
+@mixin hero() {
+    min-height: 30vh;
+    background-size: cover;
+    background-position: center;
+
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .hero-text {
+        color: $light;
+        width: 60%;
+        position: relative;
+    }
+}

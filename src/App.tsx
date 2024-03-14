@@ -1,4 +1,5 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { createTheme, ThemeProvider } from '@mui/material';
 import Home from './pages/Home';
 import Root from './pages/Root';
 import Contact from './pages/Contact';
@@ -6,6 +7,14 @@ import About from './pages/About';
 import Gallery from './pages/Gallery';
 
 function App() {
+    const theme = createTheme({
+        palette: {
+            primary: {
+                main: '#88bcff',
+            },
+        },
+    });
+
     const router = createBrowserRouter([
         {
             path: '/',
@@ -31,7 +40,11 @@ function App() {
         },
     ]);
 
-    return <RouterProvider router={router} />;
+    return (
+        <ThemeProvider theme={theme}>
+            <RouterProvider router={router} />
+        </ThemeProvider>
+    );
 }
 
 export default App;
