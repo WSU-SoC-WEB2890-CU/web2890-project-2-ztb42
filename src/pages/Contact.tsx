@@ -42,6 +42,7 @@ const Contact = () => {
                         autoComplete="name"
                         value={formData.name}
                         onChange={handleChange}
+                        color="secondary"
                     />
                     <TextField
                         variant="filled"
@@ -54,6 +55,7 @@ const Contact = () => {
                         autoComplete="email"
                         value={formData.email}
                         onChange={handleChange}
+                        color="secondary"
                     />
                     <TextField
                         variant="filled"
@@ -67,6 +69,7 @@ const Contact = () => {
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
+                        color="secondary"
                     />
                     <Button type="submit" variant="contained" color="inherit" sx={{ px: 4, my: 2 }}>
                         Shoot us a Message!
