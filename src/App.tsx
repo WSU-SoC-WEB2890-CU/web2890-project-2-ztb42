@@ -12,6 +12,9 @@ function App() {
             primary: {
                 main: '#88bcff',
             },
+            secondary: {
+                main: '#3a4b61',
+            },
         },
     });
 
