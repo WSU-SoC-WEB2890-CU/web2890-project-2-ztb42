@@ -1,12 +1,41 @@
+import { useState, useEffect } from 'react';
+import { Container, Fab, Zoom } from '@mui/material';
 import { Masonry } from '@mui/lab';
-import { Container } from '@mui/material';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 
 const Gallery = () => {
-    const isMobile = window.innerWidth < 768;
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+    const [showScrollTop, setShowScrollTop] = useState(false);
+
+    const checkScrollTop = () => {
+        if (!showScrollTop && window.scrollY > 100) {
+            setShowScrollTop(true);
+        } else if (showScrollTop && window.scrollY <= 100) {
+            setShowScrollTop(false);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('resize', () => {
+            setIsMobile(window.innerWidth < 768);
+        });
+
+        window.addEventListener('scroll', checkScrollTop);
+        return () => {
+            window.removeEventListener('scroll', checkScrollTop);
+        };
+    }, [showScrollTop]);
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
 
     return (
         <Container className="gallery" sx={{ my: 5 }}>
-            <Masonry columns={isMobile ? 1 : 2} spacing={2}>
+            <Masonry columns={isMobile ? 1 : 2} spacing={2} sx={{ margin: '0 auto' }}>
                 {itemData.map((item, index) => (
                     <div key={index}>
                         <img
@@ -18,6 +47,16 @@ const Gallery = () => {
                     </div>
                 ))}
             </Masonry>
+            <Zoom in={showScrollTop}>
+                <Fab
+                    color="secondary"
+                    aria-label="scroll back to top"
+                    onClick={scrollToTop}
+                    style={{ position: 'fixed', bottom: '20px', right: '20px' }}
+                >
+                    <ArrowUpwardIcon fontSize="large" />
+                </Fab>
+            </Zoom>
         </Container>
     );
 };

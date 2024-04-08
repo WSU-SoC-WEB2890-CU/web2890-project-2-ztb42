@@ -8,12 +8,41 @@ const Contact = () => {
         message: '',
     });
 
+    const [formErrors, setFormErrors] = useState({
+        name: '',
+        email: '',
+        message: '',
+    });
+
     const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFormData({ ...formData, [event.target.name]: event.target.value });
+        const { name, value } = event.target;
+
+        // Update form data
+        setFormData({ ...formData, [name]: value });
+
+        // Clear the error message when user starts typing
+        if (formErrors[name as keyof typeof formErrors]) {
+            setFormErrors({ ...formErrors, [name]: '' });
+        }
     };
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
+
+        // Validation logic
+        const errors = {
+            name: formData.name.trim() === '' ? 'Enter your name here!' : '',
+            email: formData.email.trim() === '' ? 'Enter your email address here!' : '',
+            message: formData.message.trim() === '' ? 'Write your message here!' : '',
+        };
+
+        setFormErrors(errors);
+
+        // Check if there are no errors before submitting
+        if (Object.values(errors).every((error) => error === '')) {
+            // Your form submission logic here
+            console.log('Form submitted:', formData);
+        }
     };
 
     return (
@@ -34,7 +63,6 @@ const Contact = () => {
                     <TextField
                         variant="filled"
                         margin="normal"
-                        required
                         fullWidth
                         id="name"
                         label="Your Name"
@@ -43,11 +71,12 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         color="secondary"
+                        error={!!formErrors.name}
+                        helperText={formErrors.name}
                     />
                     <TextField
                         variant="filled"
                         margin="normal"
-                        required
                         fullWidth
                         id="email"
                         label="Your Email Address"
@@ -56,11 +85,12 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         color="secondary"
+                        error={!!formErrors.email}
+                        helperText={formErrors.email}
                     />
                     <TextField
                         variant="filled"
                         margin="normal"
-                        required
                         fullWidth
                         multiline
                         rows={4}
@@ -70,6 +100,8 @@ const Contact = () => {
                         value={formData.message}
                         onChange={handleChange}
                         color="secondary"
+                        error={!!formErrors.message}
+                        helperText={formErrors.message}
                     />
                     <Button type="submit" variant="contained" color="inherit" sx={{ px: 4, my: 2 }}>
                         Shoot us a Message!
