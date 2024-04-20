@@ -1,0 +1,11 @@
+// helpers
+@import 'abstracts/variables', 'abstracts/mixins';
+
+// base stuff
+@import 'base/base';
+
+// components
+@import 'components/navbar', 'components/footer';
+
+// pages
+@import 'pages/home', 'pages/contact', 'pages/gallery', 'pages/about';

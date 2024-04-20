@@ -1,0 +1,90 @@
+.footer {
+    background-color: $dark-blue;
+    color: $light;
+    padding: 2rem 0 0;
+
+    a {
+        font-family: 'Dosis', sans-serif;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        color: $light;
+        transition: color 0.3s;
+        align-items: center;
+        text-decoration: none;
+
+        &:hover {
+            color: $blue;
+        }
+    }
+
+    .social-media {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin: 2rem 0 4rem;
+        align-items: center;
+
+        .slash {
+            color: rgba($light, 0.6);
+            font-size: 4.5rem;
+            font-weight: 100;
+            margin: 0 2rem;
+        }
+
+        @media (max-width: 768px) {
+            gap: 1rem;
+
+            .slash {
+                display: none;
+            }
+
+            a {
+                margin: 1rem 0;
+            }
+        }
+    }
+
+    .links {
+        background-color: $black;
+        padding: 3rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 3rem;
+
+        a {
+            color: rgba($light, 0.7);
+
+            &:hover {
+                color: $light;
+            }
+        }
+
+        img {
+            height: 60px;
+            width: auto;
+            object-fit: cover;
+            transition: transform 0.3s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        & > :nth-child(3) {
+            flex: 1;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            gap: 2rem;
+
+            & > :nth-child(3) {
+                flex: 0;
+                text-align: left;
+                order: 1;
+            }
+        }
+    }
+}

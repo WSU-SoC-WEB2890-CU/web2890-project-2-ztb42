@@ -1,0 +1,58 @@
+.home {
+    .nav-bar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        box-shadow: none;
+        background-color: transparent;
+        z-index: 1000;
+    }
+
+    .mobile-nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        box-shadow: none;
+        background-color: transparent;
+        z-index: 1000;
+    }
+
+    .image {
+        height: 100vh;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .controls {
+        position: absolute;
+        bottom: 0;
+        z-index: 1000;
+        margin: 0;
+        text-align: center;
+        width: 100%;
+        padding: 1rem 0;
+        background-color: rgba($color: $dark-gray, $alpha: 0.6);
+    }
+
+    .gallery-link {
+        position: absolute;
+        bottom: 0;
+        z-index: 1000;
+        margin: 0;
+        text-align: center;
+        width: 100%;
+        padding: 1rem 0;
+        background-color: rgba(black, 0.5);
+        font-family: 'Dosis', sans-serif !important;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $light;
+        font-size: 1.5rem;
+        transition: 0.2s ease;
+
+        &:hover {
+            background-color: rgba(black, 0.55);
+            color: $blue;
+        }
+    }
+}
